@@ -1,0 +1,24 @@
+<h1>Liste des Articles</h1>
+<table border="1">
+    <tr>
+        <td>titre</td>
+        <td>contenu</td>
+        <td>Date Article</td>
+
+    </tr>
+    {% for a in article %}
+
+    <tr>
+        <td>
+            {{ a.titre }}
+        </td>
+        <td>
+            {{ a.contenu }}
+        </td>
+        <td>
+            {{ a.dateajout|date }}
+        </td>
+
+
+
+{% endfor %}

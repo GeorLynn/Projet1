@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block name %}
+    <div class="container">
+
+            <p align="right"><a href="logout" class="btn btn-secondary">Déconnexion</a></p>
+
+
+
+    </div>
+
+{% endblock name %}
+{% block body %}
+
+
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Liste des commentaires</h2>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>
+                    {% for c in commentaires %}
+
+                       <b>{{ c.user.username }} le   {{ c.dateajout|date('d/m/Y') }}</b>
+                        <br>
+                        {{ c.contenu }}
+                        <br><br>
+                    {% endfor %}
+
+                </p>
+
+            </blockquote>
+        </div>
+        <div class="card-footer text-muted">
+            <a href="{{ path('la') }}">Retourner aux articles</a>
+        </div>
+    </div>
+    <br><br><br><br>
+{% endblock %}

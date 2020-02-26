@@ -1,0 +1,40 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Utilisateurs</h1>
+        <br>
+        <center>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Identifiant</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Username_Canonical</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Email_canonical</th>
+                    <th scope="col">password</th>
+                    <th scope="col">Modifier User</th>
+                    <th scope="col">Supprimer User</th>
+                </tr>
+                </thead>
+                {% for u in users %}
+                    <tr>
+                        <td>{{ u.id }}</td>
+                        <td>{{ u.username }}</td>
+                        <td>{{ u.usernameCanonical }}</td>
+                        <td>{{ u.email }}</td>
+                        <td>{{ u.emailCanonical }}</td>
+                        <td>{{ u.password }}</td>
+
+                        <td><a href="{{ path('Update',{'id':u.id}) }}">Update</a></td>
+                        <td><a href="{{ path('Delete',{'id':u.id}) }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+{% endblock %}

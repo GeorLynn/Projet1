@@ -1,0 +1,28 @@
+<h1>Liste des Commentaires</h1>
+<table border="1">
+    <tr>
+        <td>Contenu</td>
+
+        <td>Date Commentaire</td>
+
+        <td>Article</td>
+
+    </tr>
+    {% for c in commentaire %}
+
+    <tr>
+
+        <td>
+            {{ c.contenu }}
+        </td>
+        <td>
+            {{ c.dateajout|date|trans }}
+        </td>
+
+        <td>
+            {{ c.articles.titre }}
+        </td>
+
+    </tr>
+
+{% endfor %}

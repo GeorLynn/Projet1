@@ -1,0 +1,12 @@
+{# app/Resources/FOSUserBundle/views/layout.html.twig  #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-70">
+                {% block fos_user_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

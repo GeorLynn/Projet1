@@ -1,0 +1,33 @@
+{% extends 'base2.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Articles</h1>
+        <br>
+        <center>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Titre d'article</th>
+                    <th scope="col">Contenu</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                {% for a in art %}
+                    <tr>
+                        <td>{{ a.user.username }}</td>
+                        <td><a href="{{ path('art', {'id':a.id}) }}">{{ a.titre }}</a></td></td>
+                        <td>{{ a.contenu }}</td>
+                        <td>{{ a.dateajout|date('d/m/Y') }}</td>
+                        <td><a href="{{ path('DeleteA',{'id':a.id}) }}">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+{% endblock %}
