@@ -13,6 +13,9 @@
       <phar pharPath="C:\composer\composer.phar" interpreterId="16c1514a-58c1-4aa3-bcd9-a820d5a9af87" />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
@@ -63,6 +66,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XM6QRtp3Q3flHtOEQCgtlwmX6J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -150,7 +154,7 @@
       <workItem from="1582572872978" duration="181000" />
       <workItem from="1582574517745" duration="16586000" />
       <workItem from="1582705640917" duration="15656000" />
-      <workItem from="1582745626917" duration="9616000" />
+      <workItem from="1582745626917" duration="10391000" />
     </task>
     <servers />
   </component>
