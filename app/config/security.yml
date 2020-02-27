@@ -3,8 +3,9 @@ security:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
-        ROLE_USER:  ROLE_USER
-        ROLE_ADMIN: ROLE_ADMIN
+        ROLE_USER:  ROLE_CANDIDAt
+        ADMIN: ROLE_ADMIN
+        ROLE_SPECTATEUR: ROLE_SPECTATEUR
 
     providers:
         fos_userbundle:
@@ -18,7 +19,7 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path: /listerA
+                default_target_path: /
             logout:
                 path:   /logout
                 target: /login

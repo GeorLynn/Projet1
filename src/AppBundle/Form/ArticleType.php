@@ -15,7 +15,10 @@ class ArticleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('contenu')->add('save', SubmitType::class);
+        $builder->add('titre')
+                ->add('contenu')
+                ->add('captcha', CaptchaType::class)
+                ->add('save', SubmitType::class);
 
     }/**
      * {@inheritdoc}

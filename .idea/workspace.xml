@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ac785d7-38ec-4ab0-873f-367a8d23344a" name="Default Changelist" comment="" />
+    <list default="true" id="7ac785d7-38ec-4ab0-873f-367a8d23344a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AppBundle/Form/RegistrationFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/Article/rechercheArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Article/rechercheArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,23 +83,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/AppBundle/Form" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Projet\app\Resources\FOSUserBundle\views\Registration" />
-      <recent name="C:\wamp64\www\Projet\web\images" />
-      <recent name="C:\wamp64\www\Projet\app\Resources\FOSUserBundle\views\Security" />
-      <recent name="C:\wamp64\www\Projet\web" />
-      <recent name="C:\wamp64\www\Projet\app\Resources\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Projet\app\Resources\views\Article" />
       <recent name="C:\wamp64\www\Projet\app\Resources\views" />
       <recent name="C:\wamp64\www\Projet\app\Resources\views\default\update" />
       <recent name="C:\wamp64\www\Projet\var\sessions" />
       <recent name="C:\wamp64\www\Projet\var" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Projet\src\AppBundle\Form" />
+      <recent name="C:\wamp64\www\Projet\app\Resources\FOSUserBundle\views\Registration" />
+      <recent name="C:\wamp64\www\Projet\web\images" />
+      <recent name="C:\wamp64\www\Projet\app\Resources\FOSUserBundle\views\Security" />
+      <recent name="C:\wamp64\www\Projet\web" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -154,7 +162,7 @@
       <workItem from="1582572872978" duration="181000" />
       <workItem from="1582574517745" duration="16586000" />
       <workItem from="1582705640917" duration="15656000" />
-      <workItem from="1582745626917" duration="10391000" />
+      <workItem from="1582745626917" duration="15403000" />
     </task>
     <servers />
   </component>
@@ -218,9 +226,9 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="507" y="256" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1582745645694" />
-    <state x="456" y="190" width="672" height="677" key="run.anything.popup" timestamp="1582589254206">
+    <state x="456" y="190" width="672" height="677" key="run.anything.popup" timestamp="1582809587793">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="190" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1582589254206" />
+    <state x="456" y="190" width="672" height="677" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1582809587793" />
   </component>
 </project>
