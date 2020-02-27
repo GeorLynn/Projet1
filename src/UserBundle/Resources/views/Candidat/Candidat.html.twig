@@ -1,0 +1,24 @@
+twig modification:exemple
+
+<html>
+<head>
+    <title>Modifier un U</title>
+
+</head>
+<body>
+<center><h1>Welcome to the Modele:update page</h1>
+    <fieldset style="width: 50%">
+        <form method="POST">
+            Email: <input type="text" name="Email" value="{{ user.email }}">
+            <br>
+            Tel: <input type="text" name="Tel" value="{{ user.tel }}">
+            <br>
+
+            PlainPassword: <input type="text" name="PlainPassword" value="{{ user.plainPassword }}"></br>
+            <input type="submit" value="Enregistrer">
+        </form>
+    </fieldset>
+</center>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>List des Users</title>
+</head>
+<body>
+<center>
+    <h1>Liste des Users</h1>
+    {#
+    <a href="{{ path('#') }}" target="_blank">noveau_utilisateur</a><a href="{{ path('#') }}" target="_blank">modifier_noveau_utilisateur</a>
+    #}
+    <table border="1">
+    <tr><th>Id</th><th>nom</th><th>prenom</th><th>specialite</th><th>tel</th><th>Details</th></tr>
+    {% for u in users %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nom}}</td>
+            <td>{{ u.prenom }}</td>
+            <td>{{ u.specialite }}</td>
+            <td>{{ u.tel }}</td>
+
+            <td><a href="{{ path('admin_voir_profil',{'id' : u.id }) }}" target="_blank">Afficher</a></td>
+
+            <td><a href="{{path ('user_delete', {'id' : u.id }) }}" target="_blank">Supprimer</a></td>
+            <td><a href="{{path ('admin_modifier', {'id' : u.id }) }}" target="_blank">Modifier</a></td>
+        </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>

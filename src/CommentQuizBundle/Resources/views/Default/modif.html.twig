@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<html>
+<head>
+    <title>Modifier un Question</title>
+
+</head>
+<body>
+<center><h1>modifier question</h1>
+    <fieldset style="width: 50%">
+        <form method="POST">
+            Ennonce: <input type="text" name="enonce" value="{{ question.enonce }}"><br>
+            Sujet: <input type="text" name="sujet" value="{{ question.sujet }}"></br>
+            Reponce1: <input type="text" name="rep1" value="{{ question.rep1 }}"></br>
+            Reponce2: <input type="text" name="rep2" value="{{ question.rep2 }}"></br>
+            Reponce3: <input type="text" name="rep3" value="{{ question.rep3 }}"></br>
+            Correct: <input type="text" name="correct" value="{{ question.correct }}"></br>
+            <input type="submit" value="Enregistrer">
+        </form>
+    </fieldset>
+</center>
+</body>
+
+</html>
+{% endblock %}

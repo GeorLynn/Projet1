@@ -1,0 +1,10 @@
+<table border="1">
+    <tr><th>Id</th><th>nom</th><th>prenom</th></tr>
+    {% for u in users %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nom}}</td>
+            <td>{{ u.prenom }}</td>
+        </tr>
+    {% endfor %}
+</table>

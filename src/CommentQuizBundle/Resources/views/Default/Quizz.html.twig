@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <!-- jquery for maximum compatibility -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script>
+        var choice =[ ];
+        var quiz = [ ];
+        {% for q in questions %}
+        var c={
+            "p1"            :    "{{ q.rep1 }}",
+            "p2"            :   "{{ q.rep2 }}",
+            "p3"            :   "{{ q.rep3 }}",
+            "correct"       :   "{{ q.correct }}"
+        };
+        var a= {
+            "question"      :   "{{ q.enonce }}",
+            "correct"       :   "{{ q.correct }}",
+        };
+        choice.push(c);
+
+        quiz.push(a);
+        {% endfor %}
+        var  score = 0;
+        var i = 0;
+        var reponse;
+        $(document).ready(function(){
+            init();
+            console.log(choice);
+            function init() {
+
+                $(".choices").prop( "disabled", false );
+                $("#titre").text('Quiz');
+                $("#question").text(quiz[i]['question']);
+                $('#choice1').text(choice[i]['p1']);
+                $('#choice2').text(choice[i]['p2']);
+                $('#choice3').text(choice[i]['p3']);
+                $('#scoree').empty();
+                $('#valider').empty();
+                $(".choices").on('click', function () {
+                    reponse = $(this).text();//erreur
+                    $(this).css({'color': '#9f2d2b'});
+                    $(".choices").prop( "disabled", true );
+                });
+                $('#submitbutton').css({'color': '#000'}).on('click', function () {
+                    $('.choice').off('click');
+                    $(this).off('click');
+                    if (reponse == choice[i]['correct']) {
+                        score++;
+                    }
+                    i++;//erreur
+                    if (i == quiz.length) {
+                        $('#valider').text('valider');
+                        $('#scoree').val(score);
+                    } else {
+                        $(".choices").css("color", "black");
+                        init();
+                    }
+                });
+                };
+
+
+        });
+    </script>
+</head>
+<body >
+<div style="margin-left: 150px">
+    <h1 id="titre"></h1>
+    <div id="quizz" ></div>
+    <h2 id="question"></h2>
+    <ul id="lechoix">
+        <dl class="choices" id="choice1"></dl>
+        <dl class="choices" id="choice2"></dl>
+        <dl class="choices" id="choice3"></dl>
+
+    </ul>
+     <button id="submitbutton">Question suivante</button>
+
+</div>
+<form  action="{{ path('valider') }}" method="post">
+
+        <input type="text"  id="scoree" name="scoree" readonly>
+
+    <button id="valider" >valider</button>
+</form>
+</form>
+</body>
+</html>
+{% endblock %}
+

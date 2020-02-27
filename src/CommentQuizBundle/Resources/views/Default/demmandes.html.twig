@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <div id="fb-root"></div>
+    <script async defer src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=298248927712899&autoLogAppEvents=1"></script>
+    <div class="container">
+        <div class="container">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <H3>Start Quiz:</H3>
+                        <br>
+                        <br>
+
+                                <div class="postinfobot">
+                                    <div class="prev pull-left">
+                                    </div>
+                                    <div class="posted pull-left" style="color: #062c33;font-size: xx-large">Choisir Sujet:</div>
+
+                                    <a style="text-decoration: none;color: #a00915;border: 5px solid #ededed; border-radius: 100px;padding: 1rem 2.5rem;" href="{{ path('sport') }}" target="_blank">Sport</a>
+                                    <a style="text-decoration: none;color: #a00915;border: 5px solid #ededed; border-radius: 100px;padding: 1rem 2.5rem;" href="{{ path('theatre') }}" target="_blank">Theatre</a>
+                                    <a style="text-decoration: none;color: #a00915;border: 5px solid #ededed; border-radius: 100px;padding: 1rem 2.5rem;" href="{{ path('danse') }}" target="_blank">Danse</a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div><!-- POST -->
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+
+{% endblock %}

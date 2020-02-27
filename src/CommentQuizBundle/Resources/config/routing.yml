@@ -1,0 +1,59 @@
+comment_quiz_homepage:
+    path:     /
+    defaults: { _controller: CommentQuizBundle:Default:index }
+
+demande:
+    path:     /demande
+    defaults: { _controller: CommentQuizBundle:Quiz:Demande }
+theatre:
+    path:     /theatre
+    defaults: { _controller: CommentQuizBundle:Quiz:theatre }
+sport:
+    path:     /sport
+    defaults: { _controller: CommentQuizBundle:Quiz:sport }
+danse:
+    path:     /danse
+    defaults: { _controller: CommentQuizBundle:Quiz:danse }
+adminconfirm:
+    path:     /adminconfirm
+    defaults: { _controller: CommentQuizBundle:Quiz:adminconfirm }
+
+valider:
+    path:     /valider
+    defaults: { _controller: CommentQuizBundle:Quiz:valider }
+comm:
+    path:     /comm
+    defaults: { _controller: CommentQuizBundle:Commentaire:comm }
+ajout:
+    path:     /ajout
+    defaults: { _controller: CommentQuizBundle:Default:ajoutquestion }
+supp:
+    path:     /supp/{id}
+    defaults: { _controller: CommentQuizBundle:Default:supprimer }
+affq:
+    path:     /affq
+    defaults: { _controller: CommentQuizBundle:Default:affichequestion }
+modif:
+    path:     /modif/{id}
+    defaults: { _controller: CommentQuizBundle:Default:modifquestion}
+
+afficheCommentaire:
+    path:     /affichecommentaire/{id}
+    defaults: { _controller: CommentQuizBundle:Commentaire:affichecommentaire }
+
+ajoutercommentaire:
+    path:     /comment/{id}
+    defaults: { _controller: CommentQuizBundle:Commentaire:ajoutercomment }
+
+supprimercommentaire:
+    path:     /commentaire/supprimer/{id}
+    defaults: { _controller: CommentQuizBundle:Commentaire:supprimercomment }
+
+Commentaire_list_dashboard:
+    path:     /admin/dashboard/allcomment
+    defaults: { _controller: CommentQuizBundle:Commentaire:affichecommentairedashboard }
+Commentaire_comfirmer_dashboard:
+    path:     /admin/commentaire/comfirmer/{id}
+    defaults: { _controller: CommentQuizBundle:Commentaire:changeretat }
+
+

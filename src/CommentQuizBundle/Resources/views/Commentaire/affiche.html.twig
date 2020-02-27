@@ -1,0 +1,293 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>commentaire</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ asset('commentaire/publication/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom -->
+    <link href="{{ asset('commentaire/publication/css/custom.css') }}" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ asset('commentaire/publication/font-awesome-4.0.3/css/font-awesome.min.css') }}">
+
+    <!-- CSS STYLE-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('commentaire/publication/css/style.css') }}" media="screen" />
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('commentaire/publication/rs-plugin/css/settings.css') }}" media="screen" />
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('commentaire/commentaire/rs-plugin/css/settings.css') }}" media="screen" />
+    <link rel="stylesheet" href="{{ asset('emojionearea-master/dist/emojionearea.css') }}">
+    <link rel="stylesheet" href="{{ asset('commentaire/modelbox/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{{ asset('commentaire/publication/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <br> <br>
+<div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=298248927712899&autoLogAppEvents=1"></script>
+<div class="container">
+    <div class="container">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+
+                    <!-- POST -->
+                    <div  style="border: 2px solid #bdbdbd;">
+                        <div class="topwrap">
+                            <div class="userinfo pull-left">
+                            </div>
+
+                            <div class="posttext pull-left">
+
+                                <p>{{ publication.nom }}</p>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div><!-- POST -->
+
+                    <br>
+
+
+                    {% for commentaire in commentaires %}
+
+                        <br>
+                        <!-- POST -->
+                        <div class="post" style="width: 90%; float: right; border: 2px solid #bdbdbd;">
+                            <div class="topwrap">
+                                <div class="userinfo pull-left">
+                                    <div class="avatar">
+                                        <img src="{{ asset('uploads/avatar/user2.png') }}" style=" height:5vw ;  max-height: 5vw; max-width:5vw;" alt="" />
+                                    </div>
+
+                                </div>
+                                <div class="avatar pull-right dropdown">
+
+
+
+                                </div>
+                                <div class="posttext pull-left">
+                                    <h2>{{ commentaire.User.nom }} {{ commentaire.User.prenom }} </h2>
+                                    <p> {{ commentaire.contenu }} </p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="postinfobot">
+
+
+                                <div class="prev pull-left">
+                                </div>
+
+                                <div class="posted pull-left"><i class="fa fa-clock-o"></i> commenter le : {{ commentaire.createdAt|date }}</div>
+                                {% if User == commentaire.User %}
+                                <form  action="{{ path("supprimercommentaire" ,{"id" :commentaire.id }) }}"  method="post">
+
+                                    <button type="submit" class="btn btn-primary pull-right"  style=" border: 1px solid #a00915 ; background-color:#bb403d; ">Supprimer</button>
+                                </form>
+                                {% endif %}
+                                <div class="clearfix"></div>
+                            </div>
+                        </div><!-- POST -->
+
+
+
+                    {% endfor %}
+                    <div class="text-center">{{ knp_pagination_render(commentaires) }}</div>
+
+
+                </div>
+            </div>
+
+
+            <form action="{{ path("ajoutercommentaire" ,{"id" :publication.id }) }}"  method="post">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                <div>
+                        <textarea name="contenu"  id="content" rows="10" cols="140" placeholder="Ajouter une comentaire"></textarea>
+
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-primary pull-left"  style="border: 1px solid #43a047 ; background-color:#66bb6a; ">Ajouter</button>
+                {% endif %}
+
+
+            </form>
+
+        </div>
+        <br><br>
+    </div>
+</div>
+    <style type="text/css">
+        body {
+            font-family: 'Varela Round', sans-serif;
+        }
+        .modal-confirm {
+            color: #636363;
+            width: 400px;
+        }
+        .modal-confirm .modal-content {
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            font-size: 14px;
+        }
+        .modal-confirm .modal-header {
+            border-bottom: none;
+            position: relative;
+        }
+        .modal-confirm h4 {
+            text-align: center;
+            font-size: 26px;
+            margin: 30px 0 -10px;
+        }
+        .modal-confirm .close {
+            position: absolute;
+            top: -5px;
+            right: -2px;
+        }
+        .modal-confirm .modal-body {
+            color: #999;
+        }
+        .modal-confirm .modal-footer {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 13px;
+            padding: 10px 15px 25px;
+        }
+        .modal-confirm .modal-footer a {
+            color: #999;
+        }
+        .modal-confirm .icon-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            border-radius: 50%;
+            z-index: 9;
+            text-align: center;
+            border: 3px solid #f15e5e;
+        }
+        .modal-confirm .icon-box i {
+            color: #f15e5e;
+            font-size: 46px;
+            display: inline-block;
+            margin-top: 13px;
+        }
+        .modal-confirm .btnconfirm {
+            color: #fff;
+            border-radius: 4px;
+            background: #60c7c1;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            min-width: 120px;
+            border: none;
+            min-height: 40px;
+            border-radius: 3px;
+            margin: 0 5px;
+            outline: none !important;
+        }
+        .modal-confirm .btn-info {
+            background: #c1c1c1;
+        }
+        .modal-confirm .btn-info:hover, .modal-confirm .btn-info:focus {
+            background: #a8a8a8;
+        }
+        .modal-confirm .btn-danger {
+            background: #f15e5e;
+        }
+        .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+            background: #ee3535;
+        }
+        .trigger-btn {
+            display: inline-block;
+            margin: 100px auto;
+        }
+    </style>
+
+    <style>
+        .postreply{
+            width: 84%;
+            float: left;
+            margin-bottom: 10px ;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container-fluid">
+
+
+
+</div>
+
+<!-- get jQuery from the google apis -->
+<script type="text/javascript" src="{{ asset('jquery-3.3.1.js') }}"></script>
+<script src="{{ asset('emojionearea-master/dist/emojionearea.min.js') }}"> </script>
+<script>
+    $("#mytext").emojioneArea({
+        pickerPosition: "right"
+    });
+</script>
+
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="{{ asset('commentaire/publication/rs-plugin/js/jquery.themepunch.plugins.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('commentaire/publication/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
+
+<script src="{{ asset('commentaire/publication/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('commentaire/modelbox/script.js') }}"> </script>
+
+
+<!-- LOOK THE DOCUMENTATION FOR MORE INFORMATIONS -->
+<script type="text/javascript">
+
+    var revapi;
+
+    jQuery(document).ready(function() {
+        "use strict";
+        revapi = jQuery('.tp-banner').revolution(
+            {
+                delay: 15000,
+                startwidth: 1200,
+                startheight: 278,
+                hideThumbs: 10,
+                fullWidth: "on"
+            });
+
+    });	//ready
+
+</script>
+
+<!-- END REVOLUTION SLIDER -->
+</body>
+</html>
+
+
+{% endblock %}
+

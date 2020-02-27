@@ -1,0 +1,77 @@
+
+
+
+{% block content %}
+    {% include 'comment.html.twig' %}
+
+    <div id="fb-root"></div>
+    <script async defer src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v3.2&appId=298248927712899&autoLogAppEvents=1"></script>
+    <div class="container">
+        <div class="container">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <H3>Liste Commentaire non comfirmer :</H3>
+                        <br>
+
+
+                        {% for commentaire in commentaires %}
+
+                            <br>
+                            <!-- POST -->
+                            <div class="post" style="width: 90%; float: right; border: 2px solid #bdbdbd;">
+                                <div class="topwrap">
+                                    <div class="userinfo pull-left">
+                                        <div class="avatar">
+                                            <img src="{{ asset('uploads/avatar/user2.png') }}" style=" height:5vw ;  max-height: 5vw; max-width:5vw;" alt="" />
+                                        </div>
+
+                                    </div>
+                                    <div class="avatar pull-right dropdown">
+
+
+
+                                    </div>
+                                    <div class="posttext pull-left">
+                                        <h2>{{ commentaire.User.nom }} {{ commentaire.User.prenom }} </h2>
+                                        <p> {{ commentaire.contenu }} </p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="postinfobot">
+
+
+                                    <div class="prev pull-left">
+                                    </div>
+
+                                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> commenter le : {{ commentaire.createdAt|date }}</div>
+
+                                        <form  action="{{ path("Commentaire_comfirmer_dashboard" ,{"id" :commentaire.id }) }}"  method="post">
+
+                                            <button type="submit" class="btn btn-primary pull-right"  style="border: 1px solid #0ba038 ; background-color:#05bb1a; ">Comfirmer</button>
+                                        </form>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div><!-- POST -->
+
+
+
+                        {% endfor %}
+                        <div class="text-center">{{ knp_pagination_render(commentaires) }}</div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+

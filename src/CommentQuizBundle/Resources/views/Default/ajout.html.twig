@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<html>
+<head>
+    <title>Ajouter un Question</title>
+
+</head>
+<body>
+<center><h1>ajouter question</h1>
+    <fieldset style="width: 50%">
+        <form method="POST">
+            Ennonce: <input type="text" name="enonce" ><br>
+            Sujet: <input type="text" name="sujet" ></br>
+            Reponce1: <input type="text" name="rep1" ></br>
+            Reponce2: <input type="text" name="rep2" ></br>
+            Reponce3: <input type="text" name="rep3" ></br>
+            Correct: <input type="text" name="correct" ></br>
+            <input type="submit" value="Enregistrer">
+        </form>
+    </fieldset>
+</center>
+
+
+</body>
+
+</html>
+{% endblock %}

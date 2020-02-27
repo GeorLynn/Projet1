@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<html>
+<head>
+    <title>Liste</title>
+</head>
+<body>
+<center>
+    <h1>Liste des questions:</h1>
+    <table border="5">
+        <tr><th>Sujet</th><th>Enonnce</th><th>Reponse1:</th><th>Reponse2:</th><th>Reponse3:</th><th>Correct:</th><th>Modifier:</th><th>Supprimer:</th></tr>
+        {% for q in question %}
+            <tr>
+                <td>{{ q.sujet }}</td>
+                <td>{{ q.enonce }}</td>
+                <td>{{ q.rep1 }}</td>
+                <td>{{ q.rep2 }}</td>
+                <td>{{ q.rep3 }}</td>
+                <td>{{ q.correct }}</td>
+                <td><a href="{{ path('modif',{'id':q.id}) }}">Modifier</a></td>
+                <td><a href="{{ path('supp',{'id':q.id}) }}">Supprimer</a></td>
+            </tr>
+
+
+        {% endfor %}
+        <tr><a href="{{ path('ajout') }}">Ajouter</a></tr>
+    </table>
+</center>
+{% for msg in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ msg }}
+    </div>
+{% endfor %}
+</body>
+</html>
+{% endblock %}
